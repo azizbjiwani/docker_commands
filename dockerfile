@@ -144,7 +144,23 @@ sudo docker network inspect bridge
 ip a
 //docker0: >> inet 172.17.0.1/16  
     
-#   
+#Creating a custom (user defined) docker bridge network and attaching a container to the network  
+docker network create -d bridge my-bridge-network  
+docker run -d -p 8088:80 --name nginx-server1 nginx:alpine  
+docker inspect nginx-server1  
+docker run -d -p 8788:80 --network="my-bridge-network" --name nginx-server2 nginx:alpine  
+docker inspect nginx-server2  
+docker exec -it nginx-server2 sh  
+ping nginx-server1  
+#ping: bad address 'nginx-server1'  
+# The 2nd server not talking to the 1st server since they are in different networks    
+#Remove - docker network rm    
+docker network rm 43539acb896e  
+
+
+
+
+
 
 
 

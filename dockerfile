@@ -129,3 +129,50 @@ sudo docker commit 2e3ac07b52c1 my-nginx-image-2
 sudo docker inspect nginx
 sudo docker images --no-trunc=true
 
+#docker network interfaces
+sudo docker network ls
+sudo docker system prune
+WARNING! This will remove:
+        - all stopped containers
+        - all networks not used by at least one container
+        - all dangling images
+        - all build cache
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+
+sudo docker network inspect bridge
+ip a
+//docker0: >> inet 172.17.0.1/16  
+    
+#   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

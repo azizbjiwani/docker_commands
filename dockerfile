@@ -157,7 +157,9 @@ ping nginx-server1
 #Remove - docker network rm    
 docker network rm 43539acb896e  
 
-
+#rm flag
+sudo docker run -it --rm 5de2811bb236
+The "--rm" flag tells Docker to delete the container when no application is running on the container.
 
 
 
